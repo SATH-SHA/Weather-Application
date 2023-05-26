@@ -1,0 +1,227 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<!--setting the viewport to make your websitelook good on all devices-->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!--Define keyword for search engine-->
+	<meta name="keywords" content="weather api, weather, current weather">
+
+	<!--Define description of your webpage-->
+	<meta name="description" content="Our webpage provides real-time weather updates, giving you the latest temperature, humidity, wind speed, and direction. You can easily access this information for your location by entering your city or zip code in the search bar.">
+
+	<!--Define author of the webpage-->
+	<meta name="author" content="Sathish Kumar M">
+
+	<!--CSS LINK-->
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+	<!--bootstrap 4-->
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<title>Weather Application</title>
+
+	<style>
+
+
+.container {
+  height: 900px;
+  max-width: 100%;
+  background:linear-gradient(to right,#3f5efb, #fc466b);
+  padding-top: 100px;
+}
+
+.container1 {
+  height: 900px;
+  max-width: 200%;
+  background:linear-gradient(to right,#2ce79c, #f4e72f);
+  padding-top: 100px;
+}
+
+
+
+.card{
+    padding: 20px 0px 15px 0px;
+    width: 500px;
+    height: 380px;
+    font-size: 35px;
+
+
+
+}
+
+.card:hover{
+	color: blue;
+}
+
+.craxes{
+  		width: 200px;
+  		height: 100px;
+  		padding-left: 120px;
+  	}
+
+
+.btn{
+     	border-radius: 4px 18px 4px 18px;
+        display: block;
+        margin: 0 auto;
+        font-size: 40px;
+     }
+
+     .btn:hover{
+        background-color: blue;
+     }
+
+form{
+    align-items: left;
+    width: 100%;
+    height: 100%;
+    
+  
+} 
+
+.form-control{
+    height: 90px;
+    width: 500px;
+    font-size: 45px;
+    margin-left: 2050px;
+}
+
+.fox{
+        font-family: Papyrus;
+        font-size: 50px;
+        margin-left: 2050px;
+    }
+
+    .font{
+        font-size: 50px;
+        font-family: Papyrus;
+
+    }
+
+
+</style>
+</head>
+<body>
+
+	  
+
+
+<section id="top-navigation-bar">
+                            <nav class="navbar navbar-expand-lg navbar-light">
+
+                            	 <img src="E:\GN TECH LAB PROJECT\sun.jpg" class="craxes"><h1 class="text">Weather App</h1>
+                        </section>
+
+
+      <div class="container mx-auto">
+        <div class="row">
+            <div class="col-12">
+
+                <form  id="forms">
+
+                    <label class="fox"><b>latitude</b></label><br>
+                    <input type="latitude" name="latitude" placeholder="Enter latitude" class="form-control"><br>
+                    <label class="fox"><b>longitude</b></label>
+                    <input type="longitude" name="longitude" placeholder="Enter longitude" class="form-control"><br>
+
+                    <label class="fox"><b>api_key</b></label>
+                    <input type="api_key" name="api_key"  placeholder="Enter api_key" class="form-control"><br><br>
+
+                     <button type="button" class="btn" id="register"><b>submit</b></button>
+
+                                        </form></br></br>
+                   </div>
+              </div>
+          <div>
+     </div>
+</div>
+
+
+
+<div class="container1">
+    <div class="row">
+        <div class="col-12">
+
+            <p style="text-align: center; font-family: Lucida Handwriting; font-size: 45px;"><b>Weather Application</b></p><br>
+
+            <div class="row d-flex justify-content-center px-5">
+        <div class="card">
+            <h2 class="ml-auto mr-4 mt-3 mb-0">WIND SPEED</h2><br>
+            <i class="fa fa-wind fa-2x" style="padding-left: 25px;"></i>
+            <p class="ml-auto mr-4 med-font" id="wind"></p>
+            <h1 class="ml-auto mr-4 mb-3 large-font" class="font" >m/s</h1>
+            
+        </div>
+
+        <div class="row d-flex justify-content-center px-5">
+        <div class="card">
+            <h2 class="ml-auto mr-4 mt-3 mb-0">HUMIDITY</h2><br><br>
+            <h1 class="ml-auto mr-4 large-font"></h1>
+            <p class="ml-auto mr-4 med-font" id="humidity"></p>
+            <p class="ml-auto mr-4 mb-0 med-font" class="font">percentage</p>
+            
+            
+        </div>
+
+
+        <div class="row d-flex justify-content-center px-5">
+        <div class="card">
+            <h2 class="ml-auto mr-4 mt-3 mb-0">TEMPERATURE</h2><br><br>
+            <i class="fa-solid fa-temperature-three-quarters fa-2x" style="padding-left: 25px;"></i>
+            <p class="ml-auto mr-4 large-font" class="font"id="temperature"></p>
+            <h1 class="ml-auto mr-4 large-font" >°C | °F</h1>
+           
+          
+           
+        </div>
+
+        <div class="row d-flex justify-content-center px-5">
+        <div class="card">
+            <h2 class="ml-auto mr-4 mt-3 mb-0">PRESSURE</h2><br><br>
+            
+            <p class="ml-auto mr-4 mb-0 med-font" class="font" id="Pressure" style="font-size: 45px;"><b>hPa</b></p>
+         </div>
+     </div>
+   </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+ <script>
+
+   $(document).ready(function() {
+    $('#register').click(function() {
+       
+       
+
+    $.ajax({
+        url: "http://localhost:8080/api7/dashboard_api",
+        type: 'GET',
+        data:$("#forms").serialize(),
+        dataType: 'json',
+        success: function(res) {
+            document.getElementById('wind').innerHTML=res.speed;
+            document.getElementById('humidity').innerHTML=res.humidity;
+            document.getElementById('temperature').innerHTML=res.temp;
+            document.getElementById('Pressure').innerHTML=res.pressure;
+        },
+        error: function(){
+            alert('check your internet connection'); }
+
+            
+    });
+    });
+    });
+
+ </script>     
+
+</body>
+</html>

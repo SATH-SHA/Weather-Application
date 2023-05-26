@@ -1,0 +1,175 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+
+    <!--setting the viewport to make your websitelook good on all devices-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Define keyword for search engine-->
+    <meta name="keywords" content="weather api, weather, current weather">
+
+    <!--Define description of your webpage-->
+    <meta name="description" content="Our webpage provides real-time weather updates, giving you the latest temperature, humidity, wind speed, and direction. You can easily access this information for your location by entering your city or zip code in the search bar.">
+
+    <!--Define author of the webpage-->
+    <meta name="author" content="Sathish Kumar M">
+
+    <!--CSS LINK-->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!--bootstrap 4-->
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+  <title>Weather Application</title>
+
+  <style>
+
+    .fixed{
+       
+      background: no-repeat;
+      background-size: cover;
+      background-position: center;
+      background-color: coral;
+      width: 100%;
+      position: fixed;
+     }
+     .container {
+        padding-top: 800px;
+        height: 100vh;
+     }
+     
+     .card{
+   padding: 10px;
+   padding-left: 25px;
+   padding-right: 25px;
+   background: transparent;
+   border-radius: 4px 18px 4px 18px;
+   width: 160%;
+  }
+
+  .craxes{
+        width: 100px;
+        height: 100px;
+    }
+
+   .text{
+        font-family: Papyrus;
+        font-size: 80px;
+
+
+   } 
+
+  .paragraph{
+        font-size: 80px;
+        font-family: cursive;
+        text-align: center;
+    }
+
+    .fox{
+        font-family: Papyrus;
+        font-size: 80px;
+    }
+
+    .ox{
+        font-family: Papyrus;
+        font-size: 80px;
+        color: snow;
+
+    }
+    .form-control{
+        font-family: Papyrus;
+        font-size: 80px;
+
+    }
+     
+    .hat{
+        font-family: Papyrus;
+        font-size: 60px;
+        padding-left: 1180px;
+       color: snow;
+    }
+
+    .tah{
+        width: 40px;
+        height: 40px;
+    }
+     .btn{
+        
+        display: block;
+        margin: 0 auto;
+        font-size: 80px;
+
+     }
+
+     .btn:hover{
+        background-color: black;
+
+     }  
+
+   
+
+  </style>
+
+
+
+  </head>
+
+  <body>
+
+    <img src="E:\GN TECH LAB PROJECT\pic2.jpg" class="fixed">
+    
+    <form id="registrationForm" onsubmit="return validatePassword()">
+    <div class="container">
+        <div class="card">
+            <div class="card-body">
+                <img src="E:\GN TECH LAB PROJECT\weather.png" class="craxes">
+                    <p class="text">Weather App</p>
+
+                    <p class="paragraph">Welcome Back!</p><br>
+
+                    <label class="fox"><b>Email</b></label>
+                    <input type="Email" name="email" placeholder="Enter Email"  id="Email"class="form-control" required><br>
+
+                    <label class="ox"><b>Password</b></label>
+                    <input type="Password" name="Password" placeholder="Enter Password" id="Password" class="form-control" required><br>
+
+                    <label class="ox"><b>phone</b></label>
+                    <input type="phone" name="phone" placeholder="Enter phone" id="phone" class="form-control" required><br>
+
+                     <label class="hat">
+                     <input type="checkbox" checked="checked" name="remember" class="tah"> Remember me
+                    </label><br><br>
+                    <button class="btn btn-primary">LOGIN</button>
+            </div>
+        </div>
+    </div>
+
+    </form>
+    
+    <script>
+        function validatePassword() {
+            let x=document.getElementById('Password').value;
+            if(x.length > 8) {
+                if(window.confirm("Are you sure want to replicate ?")) {
+                    //window.open(weather Application 2.html)
+                    window.location.href="Weather application 2.html";
+                }
+            }
+            else{
+                alert("Enter the Correct Password");
+            }
+        }
+    </script>
+  
+
+  </body>
+
+</html>
